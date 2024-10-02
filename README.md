@@ -1,4 +1,48 @@
 # Java
+**Static Variable:** A static variable in Java is a variable that's associated with a class, rather than with any specific instance of the class. This means that there is only one copy of the variable in memory, even if there are multiple instances of the class.
+
+```
+class Mobile{
+	String brand;
+	int price;
+	String network;
+//	String name;
+	static String name;
+	
+	public void show() {
+		System.out.println(brand+" : "+price+" : "+name);
+	}
+	
+}
+
+public class Demo {
+	public static void main(String[] args) 
+	{
+		Mobile obj1=new Mobile();
+		obj1.brand="Apple";
+		obj1.price=1500;
+		//obj1.name="SmartPhone";
+		Mobile.name="Phone";
+		
+		Mobile obj2=new Mobile();
+		obj2.brand="Samsung";
+		obj2.price=1700;
+		//obj2.name="SmartPhone";
+		Mobile.name="SmartPhone";
+		
+		//obj1.name="Phone";
+		Mobile.name="SmartPhone";
+		
+		obj1.show(); //op:  Apple:1500:smartPhone // because point to same (static) variable, that is only one copy for all
+		obj2.show(); //op:  Samsung:1700:smartPhone
+		
+		//System.out.println(obj1.brand);
+
+	
+	}
+}
+
+```
 
 **Static Method:** A static method in Java is a method that is part of a class rather than an instance of that class. Every instance of a class(objects) has access to the instance method.
 Static methods have access to class variables (static variables) without using the class's object (instance). Only static data may be accessed by a static method.
