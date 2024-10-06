@@ -95,6 +95,48 @@ public class Demo {
 	}
 }
 ```
+**Static Block:**When a block is associated with the word **static**, it is called a static block. A static block can be used for the static initialization of a class. The code that is written inside the static block run once, when the class is getting loaded into the memory.
+
+// 1st class is loaded then object inisiated
+
+```
+class Mobile{
+	String brand;
+	int price;
+	String network;
+	static String name;
+	static{
+		name="Phone";
+		System.out.println("in static block");
+	}
+	Mobile(){
+		brand="";
+		price=200;
+//		name="Phone"; // insted of here, define name in static, then it will not initialize again and again whenever object is created.
+		System.out.println("in constructor");
+	}
+	public void show() {
+		System.out.println(brand+" : "+price+" : "+name);
+	}
+}
+public class Demo {
+	public static void main(String[] args) throws ClassNotFoundException
+	{
+		
+		Class.forName("Mobile"); // using this we can loaded class without creation of object.
+		
+//		Mobile obj1=new Mobile();
+//		obj1.brand="Apple";
+//		obj1.price=1500;
+//		Mobile.name="SmartPhone";
+//		
+//		Mobile obj2=new Mobile();
+
+	
+	}
+}
+
+```
 **Collection API**:
 Collection API -> concept //
 Collection -> Interface //
